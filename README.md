@@ -2,6 +2,8 @@
 
 > A Mpvue project
 
+该项目基于mpvue，主要集成了vue-entry和mpvue-router-patch,详情可参考<a href="https://blog.csdn.net/tianyaluqingchen/article/details/82868765">微信小程序之基于mpvue搭建项目框架</a>
+
 ## Build Setup
 
 ``` bash
