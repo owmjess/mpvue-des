@@ -1,24 +1,9 @@
 <template>
-  <div class="container" @click="clickHandle('test click', $event)">
-
-    <div class="userinfo" @click="bindViewTap">
-      <img class="userinfo-avatar" v-if="userInfo.avatarUrl" :src="userInfo.avatarUrl" background-size="cover" />
-      <div class="userinfo-nickname">
-        <card :text="userInfo.nickName"></card>
-      </div>
-    </div>
-
-    <div class="usermotto">
-      <div class="user-motto">
-        <card :text="motto"></card>
-      </div>
-    </div>
-
-    <form class="form-container">
-      <input type="text" class="form-control" v-model="motto" placeholder="v-model" />
-      <input type="text" class="form-control" v-model.lazy="motto" placeholder="v-model.lazy" />
-    </form>
-    <a href="/pages/counter" class="counter">去往Vuex示例页面</a>
+  <div class="myorder">
+      <van-tabs :active="active">
+        <van-tab v-for="(item,index) in tabName" :key="index" :title="item"></van-tab>
+      </van-tabs>
+      {{motto}}
   </div>
 </template>
 
@@ -28,8 +13,10 @@ import card from '@/components/card'
 export default {
   data () {
     return {
-      motto: 'Hello World',
-      userInfo: {}
+      motto: 'Hello Worlds',
+      userInfo: {},
+      tabName: ['全部','待接单','待取货', '运送中', '已送达', '已取消'],
+      active:'3'
     }
   },
 
@@ -66,41 +53,19 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
-}
-
-.userinfo-nickname {
-  color: #aaa;
-}
-
-.usermotto {
-  margin-top: 150px;
-}
-
-.form-control {
-  display: block;
-  padding: 0 12px;
-  margin-bottom: 5px;
-  border: 1px solid #ccc;
-}
-
-.counter {
-  display: inline-block;
-  margin: 10px auto;
-  padding: 5px 10px;
-  color: blue;
-  border: 1px solid blue;
-}
+<style lang="scss">
+  .myorder{
+    .van-tabs__line {
+      z-index: 1;
+      height: 2rpx;
+      position: absolute;
+      background-color: #FF7D00!important;
+    }
+    .van-tabs__wrap--scrollable .van-tab {
+      -webkit-flex: 0 0 16.5%;
+      flex-basis: 16.5% !important;
+    }
+  }
+</style>
+<style  lang='scss' scoped>
 </style>

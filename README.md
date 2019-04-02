@@ -2,7 +2,9 @@
 
 > A Mpvue project
 
-该项目基于mpvue，主要集成了vue-entry和mpvue-router-patch,详情可参考<a href="https://blog.csdn.net/tianyaluqingchen/article/details/82868765">微信小程序之基于mpvue搭建项目框架</a>
+该项目基于mpvue，主要集成了vue-entry和mpvue-router-patch,
+引入vant 有赞ui, 引入fly请求模块
+封装完善的vuex加上数据持久化
 
 ## Build Setup
 
